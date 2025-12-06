@@ -3,8 +3,11 @@
 import { motion } from "framer-motion";
 import { projects } from "@/lib/data";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Projects() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="projects"
@@ -18,10 +21,10 @@ export default function Projects() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-            Featured Projects
+            {t.projects.title}
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg">
-            Building innovative solutions and learning in public
+            {t.projects.subtitle}
           </p>
         </motion.div>
 
@@ -80,7 +83,7 @@ export default function Projects() {
                       className="flex items-center text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-300"
                     >
                       <FaGithub className="mr-2" />
-                      Code
+                      {t.projects.code}
                     </a>
                   )}
                   {project.demo && (
@@ -91,7 +94,7 @@ export default function Projects() {
                       className="flex items-center text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-300"
                     >
                       <FaExternalLinkAlt className="mr-2" />
-                      Demo
+                      {t.projects.demo}
                     </a>
                   )}
                 </div>

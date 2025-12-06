@@ -2,8 +2,10 @@
 
 import { personalInfo } from "@/lib/data";
 import { FaGithub, FaLinkedin, FaEnvelope, FaHeart } from "react-icons/fa";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -15,19 +17,19 @@ export default function Footer() {
               Elizabeth Muthoni
             </h3>
             <p className="text-gray-400">
-              Building secure and scalable solutions from Mombasa, Kenya 🇰🇪
+              {t.footer.tagline}
             </p>
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4">{t.footer.quickLinks}</h4>
             <ul className="space-y-2">
               <li>
                 <a
                   href="#about"
                   className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
                 >
-                  About
+                  {t.nav.about}
                 </a>
               </li>
               <li>
@@ -35,7 +37,7 @@ export default function Footer() {
                   href="#projects"
                   className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
                 >
-                  Projects
+                  {t.nav.projects}
                 </a>
               </li>
               <li>
@@ -43,7 +45,7 @@ export default function Footer() {
                   href="#experience"
                   className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
                 >
-                  Experience
+                  {t.nav.experience}
                 </a>
               </li>
               <li>
@@ -51,14 +53,14 @@ export default function Footer() {
                   href="#contact"
                   className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
                 >
-                  Contact
+                  {t.nav.contact}
                 </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Connect</h4>
+            <h4 className="text-lg font-semibold mb-4">{t.footer.connect}</h4>
             <div className="flex space-x-4">
               <a
                 href={personalInfo.github}
@@ -88,8 +90,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 pt-8 text-center">
           <p className="text-gray-400 flex items-center justify-center">
-            Made with <FaHeart className="text-red-500 mx-2" /> by Elizabeth
-            Muthoni © {currentYear}
+            {t.footer.madeWith} <FaHeart className="text-red-500 mx-2" /> {t.footer.by} © {currentYear}
           </p>
         </div>
       </div>

@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { experience } from "@/lib/data";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Experience() {
+  const { t } = useLanguage();
+
   return (
     <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto">
@@ -14,10 +17,10 @@ export default function Experience() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-            Experience
+            {t.experience.title}
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg">
-            My professional journey in tech
+            {t.experience.subtitle}
           </p>
         </motion.div>
 

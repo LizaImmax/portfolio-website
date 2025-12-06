@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { certifications } from "@/lib/data";
+import { useLanguage } from "@/contexts/LanguageContext";
 import {
   FaCloud,
   FaShieldAlt,
@@ -25,6 +26,8 @@ const categoryColors: { [key: string]: string } = {
 };
 
 export default function Certifications() {
+  const { t } = useLanguage();
+  
   const groupedCerts = certifications.reduce((acc, cert) => {
     if (!acc[cert.category]) {
       acc[cert.category] = [];
@@ -46,10 +49,10 @@ export default function Certifications() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-            Certifications
+            {t.certifications.title}
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg">
-            Continuous learning and professional development
+            {t.certifications.subtitle}
           </p>
         </motion.div>
 

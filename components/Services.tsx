@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 import {
   FaCloud,
   FaCode,
@@ -105,6 +106,8 @@ const services = [
 ];
 
 export default function Services() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="services"
@@ -118,11 +121,10 @@ export default function Services() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-            Services & Expertise
+            {t.services.title}
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg max-w-3xl mx-auto">
-            Specialized services to help you build secure, scalable, and
-            high-performance cloud solutions
+            {t.services.subtitle}
           </p>
         </motion.div>
 
@@ -172,7 +174,7 @@ export default function Services() {
             href="#contact"
             className="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300"
           >
-            Let&apos;s Work Together
+            {t.services.cta}
           </a>
         </motion.div>
       </div>

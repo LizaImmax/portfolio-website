@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 import {
   FaCloud,
   FaMicrophone,
@@ -118,6 +119,8 @@ const goals = [
 ];
 
 export default function Now() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="now"
@@ -131,13 +134,13 @@ export default function Now() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-            What I&apos;m Working On Now
+            {t.now.title}
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg">
-            Current projects, learning journey, and upcoming goals
+            {t.now.subtitle}
           </p>
           <p className="text-sm text-gray-500 dark:text-gray-500 mt-2">
-            Last updated: December 2025
+            {t.now.lastUpdated}: December 2025
           </p>
         </motion.div>
 
@@ -149,7 +152,7 @@ export default function Now() {
             viewport={{ once: true }}
             className="text-3xl font-bold text-gray-800 dark:text-white mb-8"
           >
-            🚀 The Upepo Ecosystem
+            🚀 {t.now.upepoEcosystem}
           </motion.h3>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {currentProjects.map((project, index) => (
@@ -230,7 +233,7 @@ export default function Now() {
                       className="flex items-center text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-300"
                     >
                       <FaGithub className="mr-2" />
-                      View Code
+                      {t.now.viewCode}
                     </a>
                   )}
                   {project.links.linkedin && (
@@ -258,7 +261,7 @@ export default function Now() {
             viewport={{ once: true }}
             className="text-3xl font-bold text-gray-800 dark:text-white mb-8"
           >
-            📚 Currently Learning
+            📚 {t.now.currentlyLearning}
           </motion.h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {learning.map((item, index) => (
@@ -302,7 +305,7 @@ export default function Now() {
             viewport={{ once: true }}
             className="text-3xl font-bold text-gray-800 dark:text-white mb-8"
           >
-            🎯 Upcoming Goals
+            🎯 {t.now.upcomingGoals}
           </motion.h3>
           {goals.map((goal, index) => (
             <motion.div

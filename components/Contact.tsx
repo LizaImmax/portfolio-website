@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { FaPaperPlane } from "react-icons/fa";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 type FormData = {
   name: string;
@@ -13,6 +14,7 @@ type FormData = {
 };
 
 export default function Contact() {
+  const { t } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
@@ -60,10 +62,10 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-            Get In Touch
+            {t.contact.title}
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg">
-            Let&apos;s collaborate on your next project
+            {t.contact.subtitle}
           </p>
         </motion.div>
 
@@ -80,10 +82,10 @@ export default function Contact() {
                 htmlFor="name"
                 className="block text-gray-700 dark:text-gray-300 font-medium mb-2"
               >
-                Name
+                {t.contact.name}
               </label>
               <input
-                {...register("name", { required: "Name is required" })}
+                {...register("name", { required: t.contact.required.name })}
                 type="text"
                 id="name"
                 className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-600"
@@ -98,14 +100,14 @@ export default function Contact() {
                 htmlFor="email"
                 className="block text-gray-700 dark:text-gray-300 font-medium mb-2"
               >
-                Email
+                {t.contact.email}
               </label>
               <input
                 {...register("email", {
-                  required: "Email is required",
+                  required: t.contact.required.email,
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: "Invalid email address",
+                    message: t.contact.required.emailInvalid,
                   },
                 })}
                 type="email"
@@ -123,10 +125,10 @@ export default function Contact() {
               htmlFor="subject"
               className="block text-gray-700 dark:text-gray-300 font-medium mb-2"
             >
-              Subject
+              {t.contact.subject}
             </label>
             <input
-              {...register("subject", { required: "Subject is required" })}
+              {...register("subject", { required: t.contact.required.subject })}
               type="text"
               id="subject"
               className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-600"
@@ -141,10 +143,10 @@ export default function Contact() {
               htmlFor="message"
               className="block text-gray-700 dark:text-gray-300 font-medium mb-2"
             >
-              Message
+              {t.contact.message}
             </label>
             <textarea
-              {...register("message", { required: "Message is required" })}
+              {...register("message", { required: t.contact.required.message })}
               id="message"
               rows={5}
               className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-600"
@@ -160,25 +162,24 @@ export default function Contact() {
             className="w-full px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-lg hover:shadow-xl hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
           >
             {isSubmitting ? (
-              "Sending..."
+              t.contact.sending
             ) : (
               <>
                 <FaPaperPlane className="mr-2" />
-                Send Message
+                {t.contact.send}
               </>
             )}
           </button>
 
           {submitStatus === "success" && (
             <p className="mt-4 text-green-600 dark:text-green-400 text-center">
-              Message sent successfully! I&apos;ll get back to you soon.
+              {t.contact.success}
             </p>
           )}
 
           {submitStatus === "error" && (
             <p className="mt-4 text-red-600 dark:text-red-400 text-center">
-              Something went wrong. Please try again or email me directly at
-              immaxliza@gmail.com
+              {t.contact.error}
             </p>
           )}
         </motion.form>
