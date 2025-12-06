@@ -30,6 +30,7 @@ export default function Contact() {
     setSubmitStatus("idle");
 
     try {
+      console.log("Submitting contact form:", data);
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
@@ -38,10 +39,14 @@ export default function Contact() {
         body: JSON.stringify(data),
       });
 
+      const responseData = await response.json();
+      console.log("Response:", responseData);
+
       if (response.ok) {
         setSubmitStatus("success");
         reset();
       } else {
+        console.error("Server error:", responseData);
         setSubmitStatus("error");
       }
     } catch (error) {
