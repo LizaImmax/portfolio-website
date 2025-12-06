@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { skills } from "@/lib/data";
+import { useLanguage } from "@/contexts/LanguageContext";
 import {
   FaCode,
   FaPalette,
@@ -33,6 +34,8 @@ const categoryColors: { [key: string]: string } = {
 };
 
 export default function Skills() {
+  const { t } = useLanguage();
+
   return (
     <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto">
@@ -43,10 +46,10 @@ export default function Skills() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-            Skills & Technologies
+            {t.skills.title}
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg">
-            My technical toolkit for building robust solutions
+            {t.skills.subtitle}
           </p>
         </motion.div>
 

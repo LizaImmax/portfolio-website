@@ -1,4 +1,3 @@
-import ThemeToggle from "@/components/ThemeToggle";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
@@ -15,7 +14,6 @@ import ScrollToTop from "@/components/ScrollToTop";
 export default function Home() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
-      <ThemeToggle />
       <Navbar />
       <ScrollToTop />
       <main>

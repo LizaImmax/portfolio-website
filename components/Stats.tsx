@@ -3,37 +3,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FaCode, FaAward, FaProjectDiagram, FaRocket } from "react-icons/fa";
-
-const stats = [
-  {
-    icon: <FaCode />,
-    value: 4,
-    suffix: "+",
-    label: "Years Experience",
-    color: "from-purple-500 to-pink-500",
-  },
-  {
-    icon: <FaProjectDiagram />,
-    value: 50,
-    suffix: "+",
-    label: "Projects Completed",
-    color: "from-blue-500 to-cyan-500",
-  },
-  {
-    icon: <FaAward />,
-    value: 15,
-    suffix: "+",
-    label: "Certifications",
-    color: "from-green-500 to-teal-500",
-  },
-  {
-    icon: <FaRocket />,
-    value: 25,
-    suffix: "%",
-    label: "Cost Reduction Achieved",
-    color: "from-orange-500 to-red-500",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 function Counter({ end, duration = 2 }: { end: number; duration?: number }) {
   const [count, setCount] = useState(0);
@@ -62,6 +32,39 @@ function Counter({ end, duration = 2 }: { end: number; duration?: number }) {
 }
 
 export default function Stats() {
+  const { t } = useLanguage();
+
+  const stats = [
+    {
+      icon: <FaCode />,
+      value: 4,
+      suffix: "+",
+      label: t.stats.yearsExp,
+      color: "from-purple-500 to-pink-500",
+    },
+    {
+      icon: <FaProjectDiagram />,
+      value: 50,
+      suffix: "+",
+      label: t.stats.projectsCompleted,
+      color: "from-blue-500 to-cyan-500",
+    },
+    {
+      icon: <FaAward />,
+      value: 15,
+      suffix: "+",
+      label: t.stats.certifications,
+      color: "from-green-500 to-teal-500",
+    },
+    {
+      icon: <FaRocket />,
+      value: 25,
+      suffix: "%",
+      label: t.stats.costReduction,
+      color: "from-orange-500 to-red-500",
+    },
+  ];
+
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 dark:from-gray-900 dark:via-purple-900/20 dark:to-gray-900">
       <div className="max-w-7xl mx-auto">
@@ -72,10 +75,10 @@ export default function Stats() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-            Impact by Numbers
+            {t.stats.title}
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg">
-            Delivering measurable results across projects
+            {t.stats.subtitle}
           </p>
         </motion.div>
 

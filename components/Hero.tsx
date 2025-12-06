@@ -3,8 +3,11 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaDownload } from "react-icons/fa";
 import { personalInfo } from "@/lib/data";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="about"
@@ -42,7 +45,7 @@ export default function Hero() {
             transition={{ delay: 0.3 }}
             className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-4"
           >
-            {personalInfo.tagline}
+            {t.hero.tagline}
           </motion.p>
 
           <motion.div
@@ -104,7 +107,7 @@ export default function Hero() {
               href="#contact"
               className="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300"
             >
-              Let&apos;s Connect
+              {t.hero.cta}
             </a>
             <a
               href="/Elizabeth_Muthoni_Resume.pdf"
@@ -112,7 +115,7 @@ export default function Hero() {
               className="inline-flex items-center justify-center px-8 py-4 bg-white dark:bg-gray-800 text-purple-600 dark:text-purple-400 font-semibold rounded-full border-2 border-purple-600 dark:border-purple-400 hover:bg-purple-50 dark:hover:bg-gray-700 hover:shadow-xl hover:scale-105 transition-all duration-300"
             >
               <FaDownload className="mr-2" />
-              Download CV
+              {t.hero.downloadCV}
             </a>
           </motion.div>
         </div>

@@ -7,6 +7,7 @@ import {
   FaBook,
   FaRocket,
   FaGithub,
+  FaLinkedin,
   FaExternalLinkAlt,
 } from "react-icons/fa";
 
@@ -37,6 +38,7 @@ const currentProjects = [
     progress: 60,
     links: {
       github: "https://github.com/LizaImmax/Upepo-Voices",
+      linkedin: "https://www.linkedin.com/showcase/upepo-voices/about/?viewAsMember=true",
     },
     techStack: ["TypeScript", "Next.js", "React", "Content Management"],
     updates: [
@@ -54,6 +56,7 @@ const currentProjects = [
     progress: 20,
     links: {
       github: "https://github.com/LizaImmax/Upepo-Soul",
+      linkedin: "https://www.linkedin.com/showcase/upepo-soul/about/?viewAsMember=true",
     },
     techStack: ["Wellness", "Content Platform", "Community Building"],
     updates: [
@@ -71,6 +74,7 @@ const currentProjects = [
     progress: 15,
     links: {
       github: "https://github.com/LizaImmax/Upepo-BookClub",
+      linkedin: "https://www.linkedin.com/showcase/upepo-bookclub1/about/?viewAsMember=true",
     },
     techStack: ["Community", "Education", "Literature"],
     updates: [
@@ -227,6 +231,17 @@ export default function Now() {
                     >
                       <FaGithub className="mr-2" />
                       View Code
+                    </a>
+                  )}
+                  {project.links.linkedin && (
+                    <a
+                      href={project.links.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+                    >
+                      <FaLinkedin className="mr-2" />
+                      LinkedIn
                     </a>
                   )}
                 </div>
