@@ -7,7 +7,7 @@ export const personalInfo = {
   linkedin: "https://www.linkedin.com/in/elizabeth-muthoni-44a378129/",
   github: "https://github.com/LizaImmax",
   bio: "Multi-Cloud Architect (AWS, GCP & Azure Certified) | DevOps & IaC (Terraform, Kubernetes) | DevSecOps | Stanford-Certified in AI/ML & Data Science | Founder & Ecosystem Architect @ Upepo Ecosystem. Passionate about building secure, scalable, and innovative cloud solutions, and leading ecosystem-driven technology initiatives.",
-  tagline: "Multi-Cloud Architect • DevOps & IaC • DevSecOps • Stanford-Certified AI/ML • Founder @ Upepo Ecosystem",
+  tagline: "Multi-Cloud Architect • DevOps & IaC • DevSecOps • Stanford-Certified in Data Science & AI/ML • Founder @ Upepo Ecosystem",
 };
 
 export const skills = {
@@ -37,7 +37,7 @@ export const skills = {
     "IDS/IPS",
   ],
   "AI/ML & Data Science": [
-    "Stanford-Certified AI/ML",
+    "Stanford-Certified in Data Science & AI/ML",
     "Machine Learning",
     "Generative AI",
     "Data Science",
