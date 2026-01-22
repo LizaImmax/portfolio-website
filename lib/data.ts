@@ -133,7 +133,21 @@ export const projects = [
     title: "Upepo Cloud",
     description:
       "Building a cloud platform from scratch to deeply understand cloud computing through reverse-engineering. A stage-based system from Core Node to distributed scalability. The repository is private while actively building—message me for access or follow along with the documentation and updates on my LinkedIn.",
-    tech: ["Cloud Computing", "System Design", "AWS", "Networking"],
+    tech: [
+      "Cloud Computing",
+      "System Design",
+      "AWS",
+      "Azure",
+      "GCP",
+      "Kubernetes",
+      "Docker",
+      "API Gateway",
+      "IAM (Identity & Access Management)",
+      "Observability (Prometheus, Grafana)",
+      "Terraform",
+      "DevOps",
+      "Networking"
+    ],
     period: "Sep 2025 - Present",
     github: "", // Repo is private; no direct link
     linkedin: "https://www.linkedin.com/in/elizabeth-muthoni-44a378129/",
