@@ -132,14 +132,15 @@ export const projects = [
   {
     title: "Upepo Cloud",
     description:
-      "Building a cloud platform from scratch to deeply understand cloud computing through reverse-engineering. A stage-based system from Core Node to distributed scalability.",
+      "Building a cloud platform from scratch to deeply understand cloud computing through reverse-engineering. A stage-based system from Core Node to distributed scalability. The repository is private while actively building—message me for access or follow along with the documentation and updates on my LinkedIn.",
     tech: ["Cloud Computing", "System Design", "AWS", "Networking"],
     period: "Sep 2025 - Present",
-    github: "https://github.com/LizaImmax/Upepo-Cloud",
+    github: "", // Repo is private; no direct link
+    linkedin: "https://www.linkedin.com/in/elizabeth-muthoni-44a378129/",
     highlights: [
       "Reverse-engineering cloud concepts through practical implementation",
       "Building distributed scalable cloud system from scratch",
-      "Learning and documenting in public",
+      "Learning and documenting in public (see LinkedIn for updates)",
     ],
   },
   {
@@ -161,6 +162,17 @@ export const projects = [
       "Microservices Architecture implementation",
       "Serverless applications with AWS Lambda",
       "Cloud security and encryption implementations",
+    ],
+  },
+  // Additional entry for GitHub profile
+  {
+    title: "See More Projects on GitHub",
+    description: "Explore more of my work and open-source contributions on GitHub.",
+    tech: ["GitHub", "Open Source"],
+    github: "https://github.com/LizaImmax",
+    highlights: [
+      "Browse all repositories and contributions",
+      "Follow for project updates and new releases",
     ],
   },
   {
